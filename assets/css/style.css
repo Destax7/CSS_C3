@@ -1,0 +1,258 @@
+/* Start Wildcard, Body And other components */
+:root {
+    --fontserif: "Young Serif";
+    --fontsans: "Outfit";
+    --mb30: 1.8rem;
+}
+
+* {
+    padding: 0rem;
+    margin: 0rem;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: hsl(30, 54%, 90%);
+}
+/* End Wildcard, Body And other components */
+
+/* Start Section */
+    section {
+        max-width: 45rem;
+        background-color: hsl(0, 0%, 100%);        
+        border-radius: 1.4rem;
+        padding: 2rem;
+    }
+
+    section h2 {
+        font-family: var(--fontserif);
+        font-size: 1.7rem;
+        font-weight: 500;
+        color: hsl(14, 45%, 36%);
+        margin-bottom: 1rem;
+    }
+
+    section .seperator {
+        height: 0.5px;
+        width: 100%;
+        background-color: hsl(30, 18%, 87%);
+        margin-top: var(--mb30);
+        margin-bottom: var(--mb30)
+    }
+
+/* subStart img */
+    .img-holder {
+        width: 100%;
+        border-radius: 0.8rem;
+        overflow: hidden;
+        margin-bottom: var(--mb30);
+    }
+
+    .img-holder img {
+        width: 100%;
+        border-radius: 0.8rem;
+
+    }
+
+/* subEnd img */
+
+/* subStart dish */
+
+.dish {
+    margin-bottom: var(--mb30);
+}
+
+.dishname {
+    font-family: var(--fontserif);
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: hsl(24, 5%, 18%);
+    margin-bottom: 1rem;
+}
+
+.dishname + .description {
+    font-family: var(--fontsans);
+    line-height: 1.5rem;
+    color: hsl(30, 10%, 34%);
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+
+}
+
+.dishname + .description + .info {
+    padding: 1.2rem 1.5rem;
+    border-radius: 0.7rem;
+    background-color: hsl(330, 100%, 98%);
+}
+
+.dish .info h4 {
+    font-family: var(--fontsans);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: hsl(332, 51%, 32%);
+    margin-bottom: 1rem;
+}
+
+.dish .info ul {
+    list-style: none;
+}
+
+.dish .info ul li {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-family: var(--fontsans);
+    display: flex;
+    align-items: center;
+}
+
+.dish .info ul li .dot {
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+    background-color: hsl(332, 51%, 32%);
+    margin-left: 0.5rem;
+    margin-right: 1.5rem;
+}
+
+.dish .info ul li span {
+    color: hsla(15, 4%, 18%, 0.916);
+    font-weight: 700;
+}
+
+.dish .info ul li h5 {
+    color: hsl(30, 10%, 34%);
+    font-weight: 400;
+}
+/* subEnd dish */
+
+/* subStart Ul ingredients */
+.ingredients + ul {
+    list-style: none;    
+}
+
+.ingredients + ul li {
+    display: flex;
+    align-items: center;
+    font-family: var(--fontsans);
+    margin-bottom: 1rem;
+}
+
+.ingredients + ul li .dot {
+    height: 5px;
+    min-width: 5px;
+    border-radius: 50%;
+    margin-right: 1.5rem;
+    background-color:hsl(14, 45%, 36%);
+}
+
+.ingredients + ul li h4 {
+    font-weight: 500;
+    color: hsl(30, 10%, 34%);
+    width: fit-content;
+}
+
+
+/* subEnd Ul ingredients */
+
+/* subStart OL instructions */
+section ol {
+    list-style: none;
+    counter-reset: instructions;
+    
+}
+
+section ol li {
+    font-family: var(--fontsans);
+    margin-bottom: 1.5rem;
+    display: flex;
+}
+
+section ol li h4 {
+    color: hsl(30, 10%, 34%);
+    font-weight: 400;
+}
+
+section ol li span {
+    color: hsla(15, 4%, 18%, 0.916);
+    font-weight: 700;        
+}
+
+section .instructions + ol li::before {
+    display: block;
+    content: counter(instructions) ": ";
+    counter-increment: instructions;
+    color:hsl(14, 45%, 36%);    
+    font-weight: 600;
+    margin-right: 1rem;
+}
+/* subEnd OL instructions */
+/* subStart Nutrition */
+section .nutrition + p {
+    font-family: var(--fontsans);
+    color: hsl(30, 10%, 34%);
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+section .nutrition + p + .group .row {
+    display: flex;
+    align-items: center;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+}
+
+section .nutrition + p + .group .row:not(:last-of-type) {
+    border-bottom: hsl(30, 18%, 87%) solid 0.5px;    
+}
+
+section .nutrition + p + .group .row > * {
+    flex-basis: 50%;
+    font-family: var(--fontsans);
+}
+
+section .nutrition + p + .group .row h3 {
+    margin-left: 2rem;
+    color: hsl(30, 10%, 34%);
+    font-weight: 400;
+}
+
+section .nutrition + p + .group .row h4 {
+    color:hsl(14, 45%, 36%);
+}
+
+
+/* subEnd Nutrition */
+
+/* Start media queries */
+
+@media (width < 400px) {
+    section {
+        border-radius: 0;
+        position: relative;
+        padding: 2rem;
+    }
+    section .img-holder {
+        height: 9rem;
+        width: initial;
+    }
+    section .img-holder img {
+        min-width: 100%;
+        min-height: 11rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 0;
+    }
+    section h1.dishname {
+        font-size: 2.2rem;
+    }
+    
+}
+
+/* End media queries */
+
+/* End Section */
